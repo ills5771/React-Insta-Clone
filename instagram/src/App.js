@@ -23,7 +23,7 @@ class App extends Component {
             thumbnailUrl={post.thumbnailUrl}
             imageUrl={post.imageUrl}
             comments={post.comments}
-            // comment={post.comments.text}
+            likes={post.likes}
           />
         ))}
       </div>

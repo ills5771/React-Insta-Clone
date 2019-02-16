@@ -9,10 +9,6 @@ class CommentSection extends React.Component {
   render() {
     return (
       <div className="comment-section">
-        <div className="comment-icons">
-          <span>heart</span>
-          <span>comment</span>
-        </div>
         <div className="comments">
           <div>
             {this.props.commentUsername}

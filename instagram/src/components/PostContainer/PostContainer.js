@@ -1,6 +1,7 @@
 import React from "react";
 import Post from "./Post";
 import CommentSection from "../CommentSection/CommentSection";
+import LikesSection from "./LikesSection";
 
 const PostContainer = props => {
   return (
@@ -14,9 +15,10 @@ const PostContainer = props => {
           thumbnailUrl={props.thumbnailUrl}
           imageUrl={props.imageUrl}
         />
+        <LikesSection likes={props.likes} />
+
         {props.comments.map(comment => (
           <CommentSection
-            //   commentUser={props.comments.username}
             commentUsername={comment.username}
             commentText={comment.text}
           />
