@@ -1,5 +1,6 @@
 import React from "react";
 import Post from "./Post";
+import CommentSection from "../CommentSection/CommentSection";
 
 const PostContainer = props => {
   return (
@@ -10,6 +11,7 @@ const PostContainer = props => {
           thumbnailUrl={props.thumbnailUrl}
           imageUrl={props.imageUrl}
         />
+        <CommentSection />
       </div>
     </div>
   );

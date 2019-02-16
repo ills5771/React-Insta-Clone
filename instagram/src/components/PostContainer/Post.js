@@ -3,13 +3,18 @@ import React from "react";
 const Post = props => {
   return (
     <div
-      style={{ display: "flex", flexDirection: "column", width: "700px" }}
+      style={{
+        display: "flex",
+        flexDirection: "column",
+        width: "700px",
+        border: "1px solid lightGray"
+      }}
       className="post"
     >
-      <div style={{ display: "flex" }} className="post-user">
+      <div style={{ display: "flex", padding: "2%" }} className="post-user">
         <span>
           <img
-            style={{ width: "30px", borderRadius: "20px", marginRight: "7px" }}
+            style={{ width: "30px", borderRadius: "20px", marginRight: "9px" }}
             className="user-photo"
             src={props.thumbnailUrl}
             alt="user thumbnail"
