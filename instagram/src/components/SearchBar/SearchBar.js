@@ -1,7 +1,7 @@
 import React from "react";
 import "./SearchBar.css";
 
-const SearchBar = props => {
+const SearchBar = () => {
   return (
     <div className="searchbar-wrapper">
       <div className="searchbar-container">
