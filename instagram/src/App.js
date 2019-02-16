@@ -9,7 +9,7 @@ class App extends Component {
   constructor() {
     super();
     this.state = {
-      dummyData: dummyData
+      posts: dummyData
     };
   }
 
@@ -18,7 +18,7 @@ class App extends Component {
     return (
       <div className="App">
         <SearchBar />
-        {this.state.dummyData.map(post => (
+        {this.state.posts.map(post => (
           <PostContainer
             username={post.username}
             thumbnailUrl={post.thumbnailUrl}
