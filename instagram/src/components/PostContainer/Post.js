@@ -6,8 +6,7 @@ const Post = props => {
       style={{
         display: "flex",
         flexDirection: "column",
-        width: "700px",
-        border: "1px solid lightGray"
+        width: "700px"
       }}
       className="post"
     >

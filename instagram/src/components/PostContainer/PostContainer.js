@@ -5,13 +5,22 @@ import CommentSection from "../CommentSection/CommentSection";
 const PostContainer = props => {
   return (
     <div style={{ margin: "3% 15%" }} className="post-wrapper">
-      <div className="post-container">
+      <div
+        style={{ border: "1px solid lightGray", width: "700px" }}
+        className="post-container"
+      >
         <Post
           username={props.username}
           thumbnailUrl={props.thumbnailUrl}
           imageUrl={props.imageUrl}
         />
-        <CommentSection />
+        {props.comments.map(comment => (
+          <CommentSection
+            //   commentUser={props.comments.username}
+            commentUsername={comment.username}
+            commentText={comment.text}
+          />
+        ))}
       </div>
     </div>
   );

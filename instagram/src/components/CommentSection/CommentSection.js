@@ -1,13 +1,26 @@
 import React from "react";
 
 class CommentSection extends React.Component {
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
     this.state = {};
   }
 
   render() {
-    return <div className="comment-section">comments</div>;
+    return (
+      <div className="comment-section">
+        <div className="comment-icons">
+          <span>heart</span>
+          <span>comment</span>
+        </div>
+        <div className="comments">
+          <div>
+            {this.props.commentUsername}
+            {this.props.commentText}
+          </div>
+        </div>
+      </div>
+    );
   }
 }
 export default CommentSection;

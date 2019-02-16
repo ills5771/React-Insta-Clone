@@ -14,7 +14,6 @@ class App extends Component {
   }
 
   render() {
-    // console.log(state)
     return (
       <div className="App">
         <SearchBar />
@@ -23,6 +22,8 @@ class App extends Component {
             username={post.username}
             thumbnailUrl={post.thumbnailUrl}
             imageUrl={post.imageUrl}
+            comments={post.comments}
+            // comment={post.comments.text}
           />
         ))}
       </div>
