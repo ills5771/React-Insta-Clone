@@ -10,10 +10,8 @@ class CommentSection extends React.Component {
     return (
       <div className="comment-section">
         <div className="comments">
-          <div>
-            {this.props.commentUsername}
-            {this.props.commentText}
-          </div>
+          <span>{this.props.commentUsername}</span>
+          <span>{this.props.commentText}</span>
         </div>
       </div>
     );

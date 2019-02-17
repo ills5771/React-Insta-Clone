@@ -2,6 +2,11 @@ import React from "react";
 import Post from "./Post";
 import CommentSection from "../CommentSection/CommentSection";
 import LikesSection from "./LikesSection";
+import styled from "styled-components";
+
+const Input = styled.input`
+  font-size: 14px;
+`;
 
 const PostContainer = props => {
   return (
@@ -24,6 +29,7 @@ const PostContainer = props => {
           />
         ))}
       </div>
+      <Input type="text" placeholder="Add a comment..." />
     </div>
   );
 };
