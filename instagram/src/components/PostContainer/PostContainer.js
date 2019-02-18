@@ -4,6 +4,7 @@ import CommentSection from "../CommentSection/CommentSection";
 import LikesSection from "./LikesSection";
 import CommentInput from "../CommentSection/CommentInput";
 import styled from "styled-components";
+import PropTypes from "prop-types";
 
 const PostWrapper = styled.div`
   margin: 3% 15%;
@@ -18,7 +19,7 @@ class PostContainer extends React.Component {
     super(props);
     this.state = {
       comments: props.comments,
-      commentText: ""
+      text: ""
     };
   }
 
@@ -32,11 +33,11 @@ class PostContainer extends React.Component {
     ev.preventDefault();
     const newComment = {
       username: "ills5771",
-      text: this.state.commentText
+      text: this.state.text
     };
     this.setState({
       comments: [...this.state.comments, newComment],
-      commentText: ""
+      text: ""
     });
   };
 
@@ -56,7 +57,7 @@ class PostContainer extends React.Component {
               <CommentSection comment={comment} />
             ))}{" "}
             <CommentInput
-              commentText={this.state.commentText}
+              text={this.state.text}
               handleChanges={this.handleChanges}
               addComment={this.addComment}
             />
@@ -66,5 +67,9 @@ class PostContainer extends React.Component {
     );
   }
 }
-
+PostsContainer.propTypes = {
+  comments: PropTypes.arrayOf(
+    PropTypes.shape({ text: PropTypes.string, username: PropTypes.string })
+  )
+};
 export default PostContainer;
