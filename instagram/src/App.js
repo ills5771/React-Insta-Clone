@@ -17,15 +17,17 @@ class App extends Component {
     return (
       <div className="App">
         <SearchBar />
-        {this.state.posts.map(post => (
-          <PostContainer
-            username={post.username}
-            thumbnailUrl={post.thumbnailUrl}
-            imageUrl={post.imageUrl}
-            comments={post.comments}
-            likes={post.likes}
-          />
-        ))}
+        <div>
+          {this.state.posts.map(post => (
+            <PostContainer
+              username={post.username}
+              thumbnailUrl={post.thumbnailUrl}
+              imageUrl={post.imageUrl}
+              comments={post.comments}
+              likes={post.likes}
+            />
+          ))}
+        </div>
       </div>
     );
   }

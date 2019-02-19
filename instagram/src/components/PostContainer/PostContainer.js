@@ -63,7 +63,7 @@ class PostContainer extends React.Component {
               likesIncrement={this.likesIncrement}
               likes={this.state.likes}
             />
-            {this.props.comments.map(comment => (
+            {this.state.comments.map(comment => (
               <CommentSection comment={comment} />
             ))}{" "}
             <CommentInput
