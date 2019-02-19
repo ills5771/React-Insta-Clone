@@ -9,25 +9,30 @@ class App extends Component {
   constructor() {
     super();
     this.state = {
-      posts: dummyData
+      posts: []
     };
+  }
+
+  componentDidMount() {
+    this.setState({
+      posts: dummyData
+    });
   }
 
   render() {
     return (
       <div className="App">
         <SearchBar />
-        <div>
-          {this.state.posts.map(post => (
-            <PostContainer
-              username={post.username}
-              thumbnailUrl={post.thumbnailUrl}
-              imageUrl={post.imageUrl}
-              comments={post.comments}
-              likes={post.likes}
-            />
-          ))}
-        </div>
+
+        {this.state.posts.map(post => (
+          <PostContainer
+            username={post.username}
+            thumbnailUrl={post.thumbnailUrl}
+            imageUrl={post.imageUrl}
+            comments={post.comments}
+            likes={post.likes}
+          />
+        ))}
       </div>
     );
   }
