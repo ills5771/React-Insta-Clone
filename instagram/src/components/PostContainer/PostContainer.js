@@ -5,6 +5,11 @@ import LikesSection from "./LikesSection";
 import CommentInput from "../CommentSection/CommentInput";
 import styled from "styled-components";
 import PropTypes from "prop-types";
+import moment from "moment";
+
+const time = moment()
+  .startOf("hour")
+  .fromNow();
 
 const PostWrapper = styled.div`
   margin: 3% 15%;
@@ -16,6 +21,10 @@ const PostsContainer = styled.div`
 const CommentSection = styled.section`
   padding: 2%;
 `;
+const Timestamp = styled.span`
+  opacity: 0.6;
+  font-size: 13px;
+`;
 
 class PostContainer extends React.Component {
   constructor(props) {
@@ -23,7 +32,8 @@ class PostContainer extends React.Component {
     this.state = {
       comments: props.comments,
       text: "",
-      likes: props.likes
+      likes: props.likes,
+      time: time
     };
   }
 
@@ -41,6 +51,7 @@ class PostContainer extends React.Component {
     };
     this.setState({
       comments: [...this.state.comments, newComment],
+      time: this.state.time,
       text: ""
     });
   };
@@ -52,10 +63,9 @@ class PostContainer extends React.Component {
   };
 
   render() {
-    console.log(this.state);
     return (
-      <PostWrapper className="post-wrapper">
-        <PostsContainer className="post-container">
+      <PostWrapper>
+        <PostsContainer>
           <Post
             username={this.props.username}
             thumbnailUrl={this.props.thumbnailUrl}
@@ -69,6 +79,7 @@ class PostContainer extends React.Component {
             {this.state.comments.map(comment => (
               <Comment comment={comment} />
             ))}{" "}
+            <Timestamp>{this.state.time}</Timestamp>
             <CommentInput
               text={this.state.text}
               handleChanges={this.handleChanges}
