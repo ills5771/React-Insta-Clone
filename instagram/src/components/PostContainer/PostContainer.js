@@ -1,6 +1,6 @@
 import React from "react";
 import Post from "./Post";
-import CommentSection from "../CommentSection/CommentSection";
+import Comment from "../CommentSection/Comment";
 import LikesSection from "./LikesSection";
 import CommentInput from "../CommentSection/CommentInput";
 import styled from "styled-components";
@@ -12,6 +12,9 @@ const PostWrapper = styled.div`
 const PostsContainer = styled.div`
   width: 700px;
   border: 1px solid lightGray;
+`;
+const CommentSection = styled.section`
+  padding: 2%;
 `;
 
 class PostContainer extends React.Component {
@@ -58,20 +61,20 @@ class PostContainer extends React.Component {
             thumbnailUrl={this.props.thumbnailUrl}
             imageUrl={this.props.imageUrl}
           />
-          <section style={{ padding: "2%" }}>
+          <CommentSection>
             <LikesSection
               likesIncrement={this.likesIncrement}
               likes={this.state.likes}
             />
             {this.state.comments.map(comment => (
-              <CommentSection comment={comment} />
+              <Comment comment={comment} />
             ))}{" "}
             <CommentInput
               text={this.state.text}
               handleChanges={this.handleChanges}
               addComment={this.addComment}
             />
-          </section>
+          </CommentSection>
         </PostsContainer>
       </PostWrapper>
     );
