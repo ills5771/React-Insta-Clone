@@ -19,7 +19,8 @@ class PostContainer extends React.Component {
     super(props);
     this.state = {
       comments: props.comments,
-      text: ""
+      text: "",
+      likes: props.likes
     };
   }
 
@@ -40,6 +41,12 @@ class PostContainer extends React.Component {
       text: ""
     });
   };
+  likesIncrement = ev => {
+    ev.preventDefault();
+    this.setState({
+      likes: this.state.likes + 1
+    });
+  };
 
   render() {
     console.log(this.state);
@@ -52,7 +59,10 @@ class PostContainer extends React.Component {
             imageUrl={this.props.imageUrl}
           />
           <section style={{ padding: "2%" }}>
-            <LikesSection likes={this.props.likes} />
+            <LikesSection
+              likesIncrement={this.likesIncrement}
+              likes={this.state.likes}
+            />
             {this.props.comments.map(comment => (
               <CommentSection comment={comment} />
             ))}{" "}
