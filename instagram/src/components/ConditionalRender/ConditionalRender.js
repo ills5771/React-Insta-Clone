@@ -1,8 +1,8 @@
 import React from "react";
 
-const ConditionalRender = PostContainer => Login => props => {
-  if (localStorage.getItem("user")) {
-    return <PostContainer />;
+const ConditionalRender = MainPage => Login => props => {
+  if (localStorage.getItem("username")) {
+    return <MainPage />;
   }
   return <Login />;
 };
