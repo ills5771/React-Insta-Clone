@@ -46,7 +46,7 @@ class PostContainer extends React.Component {
   addComment = ev => {
     ev.preventDefault();
     const newComment = {
-      username: "ills5771",
+      username: window.localStorage.getItem("username"),
       text: this.state.text
     };
     this.setState({
