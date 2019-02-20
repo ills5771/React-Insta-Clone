@@ -1,13 +1,15 @@
 import React from "react";
+import { Link } from "react-router-dom";
+
 import "./SearchBar.css";
 
-const SearchBar = () => {
+const SearchBar = props => {
   return (
     <div className="searchbar-wrapper">
       <div className="searchbar-container">
         <div style={{ display: "flex" }} className="logo">
           <span className="logo-img">
-            <i class="fab fa-instagram fa-2x" />
+            <i className="fab fa-instagram fa-2x" />
           </span>
           <div
             style={{
@@ -25,7 +27,11 @@ const SearchBar = () => {
           </span>
         </div>
         <div className="search-input">
-          <input type="text" placeholder="Search" />
+          <input
+            onChange={props.filterSearch}
+            type="text"
+            placeholder="Search"
+          />
         </div>
         <div
           style={{
@@ -36,14 +42,16 @@ const SearchBar = () => {
           }}
           className="search-icons"
         >
+          {/* <Link to="/login">logout</Link> */}
+
           <span>
-            <i class="far fa-compass fa-lg" />
+            <i className="far fa-compass fa-lg" />
           </span>
           <span>
-            <i class="far fa-heart fa-lg" />
+            <i className="far fa-heart fa-lg" />
           </span>
           <span>
-            <i class="far fa-user fa-lg" />
+            <i className="far fa-user fa-lg" />
           </span>
         </div>
       </div>
