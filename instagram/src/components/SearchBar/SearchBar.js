@@ -2,6 +2,7 @@ import React from "react";
 import styled from "styled-components";
 
 import "./SearchBar.css";
+
 const SearchbarWrapper = styled.div`
   border-bottom: 1px solid lightgrey;
 `;

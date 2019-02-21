@@ -7,9 +7,11 @@ const CommentIcons = styled.div`
 const HeartIcon = styled.div`
   margin-right: 2%;
 `;
+const LikesContainer = styled.div``;
+
 const LikesSection = props => {
   return (
-    <div className="likes-section">
+    <LikesContainer>
       <CommentIcons>
         <HeartIcon>
           {" "}
@@ -21,7 +23,7 @@ const LikesSection = props => {
         </div>
       </CommentIcons>
       <h4>{props.likes} likes</h4>
-    </div>
+    </LikesContainer>
   );
 };
 
