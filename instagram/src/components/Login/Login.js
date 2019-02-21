@@ -23,6 +23,9 @@ const Button = styled.button`
   width: 77%;
   border-radius: 3px;
 `;
+const BrandLogo = styled.img`
+  width: 200px;
+`;
 
 class Login extends React.Component {
   constructor() {
@@ -48,15 +51,12 @@ class Login extends React.Component {
     return (
       <Form>
         <span>
-          <img
-            style={{ width: "200px" }}
-            className="igCursive2"
-            alt="insta cursive2"
+          <BrandLogo
+            alt="ig logo"
             src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2a/Instagram_logo.svg/1200px-Instagram_logo.svg.png"
           />
         </span>
         <Input
-          className="input-user"
           type="text"
           placeholder="Username"
           name="username"
@@ -64,7 +64,6 @@ class Login extends React.Component {
         />
 
         <Input
-          className="input-pass"
           type="text"
           placeholder="Password"
           name="password"
