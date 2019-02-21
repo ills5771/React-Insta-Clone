@@ -2,6 +2,9 @@ import React, { Component } from "react";
 import SearchBar from "../SearchBar/SearchBar";
 import dummyData from "../../dummy-data";
 import Posts from "../PostContainer/Posts";
+import styled from "styled-components";
+
+const MainContainer = styled.div``;
 
 class MainPage extends Component {
   constructor() {
@@ -28,7 +31,7 @@ class MainPage extends Component {
   filteredPosts;
   render() {
     return (
-      <div className="main-page">
+      <MainContainer>
         <SearchBar filterSearch={this.filterSearch} />
 
         <div>
@@ -40,7 +43,7 @@ class MainPage extends Component {
             }
           />
         </div>
-      </div>
+      </MainContainer>
     );
   }
 }
