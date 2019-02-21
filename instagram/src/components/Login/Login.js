@@ -11,6 +11,11 @@ const Form = styled.form`
   height: 300px;
   margin: 15% 35%;
 `;
+const Input = styled.input`
+  height: 25px;
+  background-color: #fafafa;
+  width: 75%;
+`;
 
 class Login extends React.Component {
   constructor() {
@@ -43,8 +48,7 @@ class Login extends React.Component {
             src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2a/Instagram_logo.svg/1200px-Instagram_logo.svg.png"
           />
         </span>
-        <input
-          style={{ height: "25px", backgroundColor: "#FAFAFA", width: "75%" }}
+        <Input
           className="input-user"
           type="text"
           placeholder="Username"
@@ -52,26 +56,14 @@ class Login extends React.Component {
           onChange={this.handleInput}
         />
 
-        <input
-          style={{ height: "25px", backgroundColor: "#FAFAFA", width: "75%" }}
+        <Input
           className="input-pass"
           type="text"
           placeholder="Password"
           name="password"
           onChange={this.handleInput}
         />
-        <button
-          style={{
-            height: "25px",
-            backgroundColor: "#C3DFFA",
-            color: "white",
-            width: "77%",
-            borderRadius: "3px"
-          }}
-          onClick={this.handleLogin}
-        >
-          Log In
-        </button>
+        <Button onClick={this.handleLogin}>Log In</Button>
       </Form>
     );
   }
