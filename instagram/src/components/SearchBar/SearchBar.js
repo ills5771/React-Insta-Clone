@@ -2,7 +2,15 @@ import React from "react";
 import styled from "styled-components";
 
 import "./SearchBar.css";
-
+const SearchbarWrapper = styled.div`
+  border-bottom: 1px solid lightgrey;
+`;
+const SearchbarContainer = styled.div`
+  display: flex;
+  justify-content: space-between;
+  padding: 2% 0;
+  margin: 0 10%;
+`;
 const LogoDiv = styled.div`
   display: flex;
 `;
@@ -15,15 +23,12 @@ const BrandLogo = styled.img`
   width: 120px;
   height: 40px;
 `;
-const SearchbarWrapper = styled.div`
-  border-bottom: 1px solid lightgrey;
-`;
 
-const SearchbarContainer = styled.div`
+const TopRightIcons = styled.div`
   display: flex;
   justify-content: space-between;
-  padding: 2% 0;
-  margin: 0 10%;
+  width: 140px;
+  opacity: 0.7;
 `;
 
 const SearchBar = props => {
@@ -49,15 +54,7 @@ const SearchBar = props => {
             placeholder="Search"
           />
         </div>
-        <div
-          style={{
-            display: "flex",
-            justifyContent: "space-between",
-            width: "140px",
-            opacity: "0.7"
-          }}
-          className="search-icons"
-        >
+        <TopRightIcons>
           <span>
             <i className="far fa-compass fa-lg" />
           </span>
@@ -67,7 +64,7 @@ const SearchBar = props => {
           <span>
             <i className="far fa-user fa-lg" />
           </span>
-        </div>
+        </TopRightIcons>
       </SearchbarContainer>
     </SearchbarWrapper>
   );
