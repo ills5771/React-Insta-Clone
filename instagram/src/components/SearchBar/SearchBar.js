@@ -15,11 +15,21 @@ const BrandLogo = styled.img`
   width: 120px;
   height: 40px;
 `;
+const SearchbarWrapper = styled.div`
+  border-bottom: 1px solid lightgrey;
+`;
+
+const SearchbarContainer = styled.div`
+  display: flex;
+  justify-content: space-between;
+  padding: 2% 0;
+  margin: 0 10%;
+`;
 
 const SearchBar = props => {
   return (
-    <div className="searchbar-wrapper">
-      <div className="searchbar-container">
+    <SearchbarWrapper>
+      <SearchbarContainer>
         <LogoDiv>
           <span className="logo-img">
             <i className="fab fa-instagram fa-2x" />
@@ -58,8 +68,8 @@ const SearchBar = props => {
             <i className="far fa-user fa-lg" />
           </span>
         </div>
-      </div>
-    </div>
+      </SearchbarContainer>
+    </SearchbarWrapper>
   );
 };
 
