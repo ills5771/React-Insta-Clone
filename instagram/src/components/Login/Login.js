@@ -16,6 +16,13 @@ const Input = styled.input`
   background-color: #fafafa;
   width: 75%;
 `;
+const Button = styled.button`
+  height: 25px;
+  background-color: #c3dffa;
+  color: white;
+  width: 77%;
+  border-radius: 3px;
+`;
 
 class Login extends React.Component {
   constructor() {
