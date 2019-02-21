@@ -1,33 +1,37 @@
 import React from "react";
+import styled from "styled-components";
+
+const PostContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  width: 700px;
+`;
+const PostUser = styled.div`
+  display: flex;
+  padding: 2%;
+`;
+
+const PostImg = styled.img`
+  width: 30px;
+  border-radius: 20px;
+  margin-right: 9px;
+`;
+
+const SpanUser = styled.span`
+  font-weight: bold;
+`;
 
 const Post = props => {
   return (
-    <div
-      style={{
-        display: "flex",
-        flexDirection: "column",
-        width: "700px"
-      }}
-      className="post"
-    >
-      <div style={{ display: "flex", padding: "2%" }} className="post-user">
+    <PostContainer>
+      <PostUser>
         <span>
-          <img
-            style={{ width: "30px", borderRadius: "20px", marginRight: "9px" }}
-            className="user-photo"
-            src={props.thumbnailUrl}
-            alt="user thumbnail"
-          />
+          <PostImg src={props.thumbnailUrl} alt="user thumbnail" />
         </span>
-        <span style={{ fontWeight: "bold" }}>{props.username}</span>
-      </div>
-      <img
-        style={{}}
-        className="post-photo"
-        src={props.imageUrl}
-        alt="post photo"
-      />
-    </div>
+        <SpanUser>{props.username}</SpanUser>
+      </PostUser>
+      <img src={props.imageUrl} alt="post photo" />
+    </PostContainer>
   );
 };
 
