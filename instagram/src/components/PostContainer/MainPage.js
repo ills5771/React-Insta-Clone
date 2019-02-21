@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import SearchBar from "../SearchBar/SearchBar";
 import dummyData from "../../dummy-data";
-import PostContainer from "../PostContainer/PostContainer";
+import Posts from "../PostContainer/Posts";
 
 class MainPage extends Component {
   constructor() {
@@ -32,15 +32,13 @@ class MainPage extends Component {
         <SearchBar filterSearch={this.filterSearch} />
 
         <div>
-          {this.state.posts.map(post => (
-            <PostContainer
-              username={post.username}
-              thumbnailUrl={post.thumbnailUrl}
-              imageUrl={post.imageUrl}
-              comments={post.comments}
-              likes={post.likes}
-            />
-          ))}
+          <Posts
+            posts={
+              this.state.filtered.length > 0
+                ? this.state.filtered
+                : this.state.posts
+            }
+          />
         </div>
       </div>
     );
