@@ -1,4 +1,17 @@
 import React from "react";
+import styled from "styled-components";
+
+const Form = styled.form`
+  width: 325px;
+  border: 1px solid lightgray;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+  height: 300px;
+  margin: 15% 35%;
+`;
+
 class Login extends React.Component {
   constructor() {
     super();
@@ -21,19 +34,7 @@ class Login extends React.Component {
 
   render() {
     return (
-      <form
-        style={{
-          width: "325px",
-          border: "1px solid lightgray",
-          display: "flex",
-          flexDirection: "column",
-          alignItems: "center",
-          justifyContent: "space-evenly",
-          height: "300px",
-          margin: "15% 35%"
-        }}
-        className="login"
-      >
+      <Form>
         <span>
           <img
             style={{ width: "200px" }}
@@ -71,7 +72,7 @@ class Login extends React.Component {
         >
           Log In
         </button>
-      </form>
+      </Form>
     );
   }
 }
